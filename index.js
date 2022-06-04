@@ -106,6 +106,10 @@ const syncWithRootState = () => {
 const walletFoo = new Wallet();
 const walletBar = new Wallet();
 
+const generateWalletTransaction = ({ wallet, recipient, amount }) => { 
+	// cpmst tr
+}
+
 let PEER_PORT;
 
 if (process.env.GENERATE_PEER_PORT === 'true') {

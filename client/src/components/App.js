@@ -13,10 +13,12 @@ class App extends Component {
 	render() {
 		const { address, balance } = this.state.walletInfo;
 		return (
-			<div>
-				<div>Address: {address}</div>
-				<div>Balance: {balance}</div>
-				<br />
+			<div className='App'>
+				<div className='WalletInfo'>
+					<div>Address: {address}</div>
+					<div>Balance: {balance}</div>
+					<br />
+				</div>
 				<Blocks />
 			</div>
 		);

@@ -8,11 +8,11 @@ const Transaction = ({ transaction }) => {
 		<div>
 			<div>From: {`${input.address.substring(0, 15)}...`} | Balance: {input.amount}</div>
 			{
-				recipients.map(recipient => { 
+				recipients.map(recipient => (
 					<div key={recipient}>
 						To: {`${recipient.substring(0, 15)}...`} | Sent: {outputMap[recipient]}
 					</div>
-				})
+				))
 			}
 		</div>
 	);

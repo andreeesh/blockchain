@@ -85,9 +85,9 @@ app.get('/api/wallet-info', (req, res) => {
 	});
 });
 
-app.get('*', (req, res) => { 
-	res.sendFile(path.join(__dirname, 'client/dist/index.html'));
-});
+// app.get('*', (req, res) => { 
+// 	res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+// });
 
 const syncWithRootState = () => {
 	request({ url: `${ROOT_NODE_ADDRESS}/api/blocks` }, (error, response, body) => {

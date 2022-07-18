@@ -30,6 +30,21 @@ app.get('/api/blocks', (req, res) => {
 	res.json(blockchain.chain);
 });
 
+app.get('/api/blocks/lenght', (req, res) => {
+	res.json(blockchain.chain.lenght);
+});
+
+app.get('/api/blocks/:id', (req, res) => {
+	const { id } = req.params;
+	const { lenght } = blockchain.chain;
+	const blocksReversed = blockchain.chain.slice().reverse();
+	let startIndex = (id - 1) * 5;
+	let endIndex = id * 5;
+	startIndex = startIndex < lenght ? startIndex : lenght;
+	endIndex = endIndex < lenght ? endIndex : lenght;
+	res.json(blocksReversed.slice(startIndex, endIndex));
+});
+
 app.post('/api/mine', (req, res) => { 
 	const { data } = req.body;
 	blockchain.addBlock({ data });
